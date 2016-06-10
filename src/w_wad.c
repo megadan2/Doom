@@ -36,6 +36,17 @@ rcsid[] = "$Id: w_wad.c,v 1.5 1997/02/03 16:47:57 b1 Exp $";
 #include <sys/stat.h>
 #include <alloca.h>
 #define O_BINARY		0
+#elif WIN32
+#include <ctype.h>
+#include <sys/types.h>
+#include <string.h>
+#include <malloc.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <io.h>
+#endif
+#ifdef _MSC_VER
+#define strcasecmp _stricmp
 #endif
 
 #include "doomtype.h"
@@ -66,6 +77,7 @@ void**			lumpcache;
 
 #define strcmpi	strcasecmp
 
+#ifndef WIN32
 void strupr (char* s)
 {
     while (*s) { *s = toupper(*s); s++; }
@@ -80,6 +92,7 @@ int filelength (int handle)
 
     return fileinfo.st_size;
 }
+#endif
 
 
 void
@@ -160,7 +173,7 @@ void W_AddFile (char *filename)
 	reloadlump = numlumps;
     }
 		
-    if ( (handle = open (filename,O_RDONLY | O_BINARY)) == -1)
+    if ( (handle = _open (filename,O_RDONLY | O_BINARY)) == -1)
     {
 	printf (" couldn't open %s\n",filename);
 	return;
@@ -174,14 +187,14 @@ void W_AddFile (char *filename)
 	// single lump file
 	fileinfo = &singleinfo;
 	singleinfo.filepos = 0;
-	singleinfo.size = LONG(filelength(handle));
+	singleinfo.size = LONG(_filelength(handle));
 	ExtractFileBase (filename, singleinfo.name);
 	numlumps++;
     }
     else 
     {
 	// WAD file
-	read (handle, &header, sizeof(header));
+	_read (handle, &header, sizeof(header));
 	if (strncmp(header.identification,"IWAD",4))
 	{
 	    // Homebrew levels?
@@ -197,8 +210,8 @@ void W_AddFile (char *filename)
 	header.infotableofs = LONG(header.infotableofs);
 	length = header.numlumps*sizeof(filelump_t);
 	fileinfo = alloca (length);
-	lseek (handle, header.infotableofs, SEEK_SET);
-	read (handle, fileinfo, length);
+	_lseek (handle, header.infotableofs, SEEK_SET);
+	_read (handle, fileinfo, length);
 	numlumps += header.numlumps;
     }
 
@@ -213,7 +226,7 @@ void W_AddFile (char *filename)
 	
     storehandle = reloadname ? -1 : handle;
 	
-    for (i=startlump ; i<numlumps ; i++,lump_p++, fileinfo++)
+    for (i=startlump ; i<(unsigned int)numlumps ; i++,lump_p++, fileinfo++)
     {
 	lump_p->handle = storehandle;
 	lump_p->position = LONG(fileinfo->filepos);
@@ -222,7 +235,7 @@ void W_AddFile (char *filename)
     }
 	
     if (reloadname)
-	close (handle);
+	_close (handle);
 }
 
 
@@ -246,22 +259,22 @@ void W_Reload (void)
     if (!reloadname)
 	return;
 		
-    if ( (handle = open (reloadname,O_RDONLY | O_BINARY)) == -1)
+    if ( (handle = _open (reloadname,O_RDONLY | O_BINARY)) == -1)
 	I_Error ("W_Reload: couldn't open %s",reloadname);
 
-    read (handle, &header, sizeof(header));
+    _read (handle, &header, sizeof(header));
     lumpcount = LONG(header.numlumps);
     header.infotableofs = LONG(header.infotableofs);
     length = lumpcount*sizeof(filelump_t);
     fileinfo = alloca (length);
-    lseek (handle, header.infotableofs, SEEK_SET);
-    read (handle, fileinfo, length);
+    _lseek (handle, header.infotableofs, SEEK_SET);
+    _read (handle, fileinfo, length);
     
     // Fill in lumpinfo
     lump_p = &lumpinfo[reloadlump];
 	
     for (i=reloadlump ;
-	 i<reloadlump+lumpcount ;
+	 i<(unsigned int)reloadlump+lumpcount ;
 	 i++,lump_p++, fileinfo++)
     {
 	if (lumpcache[i])
@@ -271,7 +284,7 @@ void W_Reload (void)
 	lump_p->size = LONG(fileinfo->size);
     }
 	
-    close (handle);
+    _close (handle);
 }
 
 
@@ -367,7 +380,7 @@ int W_CheckNumForName (char* name)
     name8.s[8] = 0;
 
     // case insensitive
-    strupr (name8.s);		
+    _strupr (name8.s);		
 
     v1 = name8.x[0];
     v2 = name8.x[1];
@@ -447,21 +460,21 @@ W_ReadLump
     if (l->handle == -1)
     {
 	// reloadable file, so use open / read / close
-	if ( (handle = open (reloadname,O_RDONLY | O_BINARY)) == -1)
+	if ( (handle = _open (reloadname,O_RDONLY | O_BINARY)) == -1)
 	    I_Error ("W_ReadLump: couldn't open %s",reloadname);
     }
     else
 	handle = l->handle;
 		
-    lseek (handle, l->position, SEEK_SET);
-    c = read (handle, dest, l->size);
+    _lseek (handle, l->position, SEEK_SET);
+    c = _read (handle, dest, l->size);
 
     if (c < l->size)
 	I_Error ("W_ReadLump: only read %i of %i on lump %i",
 		 c,l->size,lump);	
 
     if (l->handle == -1)
-	close (handle);
+	_close (handle);
 		
     // ??? I_EndRead ();
 }
@@ -479,7 +492,7 @@ W_CacheLumpNum
 {
     byte*	ptr;
 
-    if ((unsigned)lump >= numlumps)
+    if ((unsigned)lump >= (unsigned)numlumps)
 	I_Error ("W_CacheLumpNum: %i >= numlumps",lump);
 		
     if (!lumpcache[lump])
