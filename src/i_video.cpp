@@ -40,6 +40,11 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 int XShmGetEventBase( Display* dpy ); // problems with g++?
 #endif
 
+#include "window.h"
+#include <memory>
+using std::unique_ptr;
+using std::make_unique;
+
 #include <stdarg.h>
 //#include <sys/time.h>
 #include <sys/types.h>
@@ -58,6 +63,10 @@ int XShmGetEventBase( Display* dpy ); // problems with g++?
 #include "doomdef.h"
 
 #define POINTER_WARP_COUNTDOWN	1
+
+unique_ptr<Doom::Window> g_window;
+
+
 
 //Display*	X_display=0;
 //Window		X_mainWindow;
@@ -193,7 +202,7 @@ bool		shmFinished;
 
 void I_GetEvent(void)
 {
-
+    g_window->ProcessMessages();
  //   event_t event;
 
  //   // put event-grabbing stuff in here
@@ -308,12 +317,11 @@ void I_GetEvent(void)
 //
 void I_StartTic (void)
 {
-
  //   if (!X_display)
 	//return;
 
  //   while (XPending(X_display))
-	//I_GetEvent();
+	I_GetEvent();
 
  //   // Warp the pointer back to the middle of the window
  //   //  or it will wander off - that is, the game will
@@ -689,9 +697,8 @@ void grabsharedmemory(int size)
 	//  (int) (image->data));
 }
 
-void I_InitGraphics(void)
-{
-
+void I_InitGraphics(void) {
+    g_window = make_unique<Doom::Window>(800, 600);
  //   char*		displayname;
  //   char*		d;
  //   int			n;
