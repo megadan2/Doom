@@ -361,7 +361,7 @@ void I_UpdateNoBlit (void)
 //
 void I_FinishUpdate (void)
 {
-    g_screen->Draw((char*)screens[0]);
+    g_screen->Draw(screens[0]);
 //    static int	lasttic;
 //    int		tics;
 //    int		i;
@@ -591,7 +591,7 @@ void I_ReadScreen (byte* scr)
 //
 void I_SetPalette (byte* palette)
 {
-//    UploadNewPalette(X_cmap, palette);
+    g_screen->SetPalette( palette, usegamma );
 }
 
 
