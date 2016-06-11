@@ -4,387 +4,387 @@
     <ClCompile Include="window.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="original\hu_lib.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\hu_stuff.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_main.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_net.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_sound.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_system.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_video.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\info.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_argv.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_bbox.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_cheat.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_fixed.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_menu.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_misc.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_random.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\m_swap.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_ceilng.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_doors.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_enemy.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_floor.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_inter.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_lights.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_map.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_maputl.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_mobj.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_plats.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_pspr.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_saveg.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_setup.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_sight.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_spec.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_switch.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_telept.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_tick.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\p_user.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_bsp.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_data.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_draw.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_main.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_plane.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_segs.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_sky.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\r_things.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\s_sound.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\sounds.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\st_lib.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\st_stuff.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\tables.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\v_video.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\w_wad.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\wi_stuff.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\z_zone.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\am_map.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\d_items.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\d_main.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\d_net.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\doomdef.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\doomstat.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\dstrings.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\f_finale.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\f_wipe.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\g_game.cpp">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="screen.h" />
     <ClInclude Include="window.h" />
     <ClInclude Include="original\hu_lib.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\hu_stuff.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\i_net.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\i_sound.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\i_system.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\i_video.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\info.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_argv.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_bbox.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_cheat.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_fixed.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_menu.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_misc.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_random.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\m_swap.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_inter.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_local.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_mobj.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_pspr.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_saveg.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_setup.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_spec.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\p_tick.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_bsp.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_data.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_defs.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_draw.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_local.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_main.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_plane.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_segs.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_sky.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_state.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\r_things.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\s_sound.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\sounds.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\st_lib.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\st_stuff.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\tables.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\unistd.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\v_video.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\w_wad.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\wi_stuff.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\z_zone.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\am_map.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_englsh.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_event.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_french.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_items.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_main.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_net.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_player.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_textur.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_think.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\d_ticcmd.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\doomdata.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\doomdef.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\doomstat.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\doomtype.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\dstrings.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\f_finale.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\f_wipe.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
     <ClInclude Include="original\g_game.h">
-      <Filter>Original Src</Filter>
+      <Filter>Original Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Original Src">
+    <Filter Include="Original Source">
       <UniqueIdentifier>{51a0a50d-955f-42b8-bff1-825f04f85959}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

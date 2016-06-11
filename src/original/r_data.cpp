@@ -91,7 +91,7 @@ typedef struct
 typedef struct
 {
     char		name[8];
-    bool		masked;	
+    int		    masked;	
     short		width;
     short		height;
     void		**columndirectory;	// OBSOLETE
