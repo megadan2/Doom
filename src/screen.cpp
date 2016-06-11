@@ -99,9 +99,9 @@ Screen::Screen( Window* window, int width, int height ) :
     BITMAPINFO bmi;
     bmi.bmiHeader.biSize = sizeof( BITMAPINFO );
     bmi.bmiHeader.biWidth = width;
-    bmi.bmiHeader.biHeight = -height; // Order pixels from top to bottom
+    bmi.bmiHeader.biHeight = -height;
     bmi.bmiHeader.biPlanes = 1;
-    bmi.bmiHeader.biBitCount = 32; // last byte not used, 32 bit for alignment
+    bmi.bmiHeader.biBitCount = 32;
     bmi.bmiHeader.biCompression = BI_RGB;
     bmi.bmiHeader.biSizeImage = 0;
     bmi.bmiHeader.biXPelsPerMeter = 0;
@@ -124,7 +124,6 @@ Screen::~Screen() {
 
 //=============================================================================
 void Screen::Draw( uint8_t* buf ) {
-   
     for (int i = 0; i < m_width * m_height; i++) {
         m_screenBuf[i] = m_palette[buf[i]];
     }

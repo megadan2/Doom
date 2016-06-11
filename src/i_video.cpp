@@ -702,6 +702,11 @@ void grabsharedmemory(int size)
 void I_InitGraphics(void) {
     g_window = make_unique<Doom::Window>(800, 600);
     g_screen = make_unique<Doom::Screen>( g_window.get(), SCREENWIDTH, SCREENHEIGHT );
+
+    g_window->SetEventHandler( []( event_t* ev ) {
+        D_PostEvent( ev );
+    });
+
  //   char*		displayname;
  //   char*		d;
  //   int			n;
