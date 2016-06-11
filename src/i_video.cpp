@@ -41,6 +41,7 @@ int XShmGetEventBase( Display* dpy ); // problems with g++?
 #endif
 
 #include "window.h"
+#include "screen.h"
 #include <memory>
 using std::unique_ptr;
 using std::make_unique;
@@ -65,6 +66,7 @@ using std::make_unique;
 #define POINTER_WARP_COUNTDOWN	1
 
 unique_ptr<Doom::Window> g_window;
+unique_ptr<Doom::Screen> g_screen;
 
 
 
@@ -359,7 +361,7 @@ void I_UpdateNoBlit (void)
 //
 void I_FinishUpdate (void)
 {
-
+    g_screen->Draw((char*)screens[0]);
 //    static int	lasttic;
 //    int		tics;
 //    int		i;
@@ -699,6 +701,7 @@ void grabsharedmemory(int size)
 
 void I_InitGraphics(void) {
     g_window = make_unique<Doom::Window>(800, 600);
+    g_screen = make_unique<Doom::Screen>( g_window.get(), SCREENWIDTH, SCREENHEIGHT );
  //   char*		displayname;
  //   char*		d;
  //   int			n;

@@ -3,7 +3,10 @@
 namespace Doom {
 
 //=============================================================================
-Window::Window( int width, int height ) {
+Window::Window( int width, int height ) :
+    m_width( width ),
+    m_height( height )
+{
     WNDCLASSEX wcex;
     wcex.cbSize = sizeof( WNDCLASSEX );
     wcex.style = CS_HREDRAW | CS_VREDRAW;

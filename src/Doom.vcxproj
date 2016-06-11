@@ -207,6 +207,7 @@
     <ClCompile Include="r_segs.cpp" />
     <ClCompile Include="r_sky.cpp" />
     <ClCompile Include="r_things.cpp" />
+    <ClCompile Include="screen.cpp" />
     <ClCompile Include="sounds.cpp" />
     <ClCompile Include="st_lib.cpp" />
     <ClCompile Include="st_stuff.cpp" />
@@ -272,6 +273,7 @@
     <ClInclude Include="r_sky.h" />
     <ClInclude Include="r_state.h" />
     <ClInclude Include="r_things.h" />
+    <ClInclude Include="screen.h" />
     <ClInclude Include="sounds.h" />
     <ClInclude Include="st_lib.h" />
     <ClInclude Include="st_stuff.h" />

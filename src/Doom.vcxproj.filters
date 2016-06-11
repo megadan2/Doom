@@ -188,6 +188,7 @@
       <Filter>OldCode</Filter>
     </ClCompile>
     <ClCompile Include="window.cpp" />
+    <ClCompile Include="screen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="am_map.h">
@@ -379,6 +380,7 @@
     <ClInclude Include="z_zone.h">
       <Filter>OldCode</Filter>
     </ClInclude>
+    <ClInclude Include="screen.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
