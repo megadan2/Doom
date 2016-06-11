@@ -1,390 +1,390 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="am_map.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="d_items.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="d_main.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="d_net.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="doomdef.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="doomstat.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="dstrings.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="f_finale.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="f_wipe.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="g_game.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="hu_lib.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="hu_stuff.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="i_main.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="i_net.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="i_sound.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="i_system.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="i_video.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="info.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_argv.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_bbox.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_cheat.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_fixed.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_menu.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_misc.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_random.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="m_swap.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_ceilng.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_doors.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_enemy.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_floor.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_inter.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_lights.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_map.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_maputl.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_mobj.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_plats.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_pspr.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_saveg.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_setup.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_sight.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_spec.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_switch.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_telept.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_tick.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="p_user.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_bsp.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_data.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_draw.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_main.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_plane.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_segs.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_sky.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="r_things.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="s_sound.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="sounds.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="st_lib.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="st_stuff.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="tables.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="v_video.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="w_wad.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="wi_stuff.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
-    <ClCompile Include="z_zone.cpp">
-      <Filter>OldCode</Filter>
-    </ClCompile>
     <ClCompile Include="window.cpp" />
     <ClCompile Include="screen.cpp" />
+    <ClCompile Include="original\hu_lib.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\hu_stuff.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\i_main.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\i_net.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\i_sound.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\i_system.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\i_video.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\info.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_argv.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_bbox.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_cheat.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_fixed.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_menu.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_misc.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_random.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\m_swap.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_ceilng.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_doors.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_enemy.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_floor.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_inter.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_lights.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_map.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_maputl.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_mobj.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_plats.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_pspr.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_saveg.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_setup.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_sight.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_spec.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_switch.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_telept.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_tick.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\p_user.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_bsp.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_data.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_draw.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_main.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_plane.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_segs.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_sky.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\r_things.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\s_sound.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\sounds.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\st_lib.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\st_stuff.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\tables.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\v_video.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\w_wad.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\wi_stuff.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\z_zone.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\am_map.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\d_items.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\d_main.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\d_net.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\doomdef.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\doomstat.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\dstrings.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\f_finale.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\f_wipe.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
+    <ClCompile Include="original\g_game.cpp">
+      <Filter>Original Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="am_map.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_englsh.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_event.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_french.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_items.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_main.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_net.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_player.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_textur.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_think.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="d_ticcmd.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="doomdata.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="doomdef.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="doomstat.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="doomtype.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="dstrings.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="f_finale.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="f_wipe.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="g_game.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="hu_lib.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="hu_stuff.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="i_net.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="i_sound.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="i_system.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="i_video.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="info.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_argv.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_bbox.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_cheat.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_fixed.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_menu.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_misc.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_random.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="m_swap.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_inter.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_local.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_mobj.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_pspr.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_saveg.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_setup.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_spec.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="p_tick.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_bsp.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_data.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_defs.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_draw.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_local.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_main.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_plane.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_segs.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_sky.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_state.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="r_things.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="s_sound.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="sounds.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="st_lib.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="st_stuff.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="tables.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="unistd.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="v_video.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="w_wad.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="wi_stuff.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
-    <ClInclude Include="z_zone.h">
-      <Filter>OldCode</Filter>
-    </ClInclude>
     <ClInclude Include="screen.h" />
     <ClInclude Include="window.h" />
+    <ClInclude Include="original\hu_lib.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\hu_stuff.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\i_net.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\i_sound.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\i_system.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\i_video.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\info.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_argv.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_bbox.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_cheat.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_fixed.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_menu.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_misc.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_random.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\m_swap.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_inter.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_local.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_mobj.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_pspr.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_saveg.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_setup.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_spec.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\p_tick.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_bsp.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_data.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_defs.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_draw.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_local.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_main.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_plane.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_segs.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_sky.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_state.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\r_things.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\s_sound.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\sounds.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\st_lib.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\st_stuff.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\tables.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\unistd.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\v_video.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\w_wad.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\wi_stuff.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\z_zone.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\am_map.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_englsh.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_event.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_french.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_items.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_main.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_net.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_player.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_textur.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_think.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\d_ticcmd.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\doomdata.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\doomdef.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\doomstat.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\doomtype.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\dstrings.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\f_finale.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\f_wipe.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
+    <ClInclude Include="original\g_game.h">
+      <Filter>Original Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="OldCode">
+    <Filter Include="Original Src">
       <UniqueIdentifier>{51a0a50d-955f-42b8-bff1-825f04f85959}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

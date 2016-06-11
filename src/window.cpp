@@ -1,5 +1,5 @@
 #include "window.h"
-#include "doomdef.h"
+#include "original/doomdef.h"
 
 namespace Doom {
 
