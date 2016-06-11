@@ -92,8 +92,8 @@ void	P_PlayerThink (player_t* player);
 //
 // P_MOBJ
 //
-#define ONFLOORZ		INT_MIN
-#define ONCEILINGZ		INT_MAX
+#define ONFLOORZ		MININT
+#define ONCEILINGZ		MAXINT
 
 // Time interval for item respawning.
 #define ITEMQUESIZE		128
@@ -151,9 +151,9 @@ typedef struct
     }			d;
 } intercept_t;
 
-#define INT_MAXERCEPTS	128
+#define MAXINTERCEPTS	128
 
-extern intercept_t	intercepts[INT_MAXERCEPTS];
+extern intercept_t	intercepts[MAXINTERCEPTS];
 extern intercept_t*	intercept_p;
 
 typedef bool (*traverser_t) (intercept_t *in);

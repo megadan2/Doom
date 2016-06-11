@@ -122,7 +122,7 @@ typedef struct
     int			y;
 
     // last icon value
-    int			oldval;
+    bool		oldval;
 
     // pointer to current icon status
     bool*		val;
@@ -183,7 +183,7 @@ STlib_initPercent
 void
 STlib_updatePercent
 ( st_percent_t*		per,
-  int			refresh );
+  bool			refresh );
 
 
 // Multiple Icon widget routines

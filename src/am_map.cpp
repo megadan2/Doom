@@ -195,18 +195,18 @@ mline_t cheat_player_arrow[] = {
 
 #define R (FRACUNIT)
 mline_t triangle_guy[] = {
-    { { -.867*R, -.5*R }, { .867*R, -.5*R } },
-    { { .867*R, -.5*R } , { 0, R } },
-    { { 0, R }, { -.867*R, -.5*R } }
+    { { fixed_t(-.867*R), fixed_t( -.5*R) }, { fixed_t( .867*R), fixed_t( -.5*R) } },
+    { { fixed_t( .867*R), fixed_t( -.5*R) } , { fixed_t( 0), fixed_t( R) } },
+    { { fixed_t( 0), fixed_t( R) }, { fixed_t( -.867*R), fixed_t( -.5*R) } }
 };
 #undef R
 #define NUMTRIANGLEGUYLINES (sizeof(triangle_guy)/sizeof(mline_t))
 
 #define R (FRACUNIT)
 mline_t thintriangle_guy[] = {
-    { { -.5*R, -.7*R }, { R, 0 } },
-    { { R, 0 }, { -.5*R, .7*R } },
-    { { -.5*R, .7*R }, { -.5*R, -.7*R } }
+    { { fixed_t( -.5*R ), fixed_t( -.7*R ) }, { fixed_t( R ), fixed_t( 0 ) } },
+    { { fixed_t( R ), fixed_t( 0 ) }, { fixed_t( -.5*R ), fixed_t( .7*R ) } },
+    { { fixed_t( -.5*R ), fixed_t( .7*R ) }, { fixed_t( -.5*R ), fixed_t( -.7*R ) } }
 };
 #undef R
 #define NUMTHINTRIANGLEGUYLINES (sizeof(thintriangle_guy)/sizeof(mline_t))
@@ -315,9 +315,9 @@ AM_getIslope
 
     dy = ml->a.y - ml->b.y;
     dx = ml->b.x - ml->a.x;
-    if (!dy) is->islp = (dx<0?-INT_MAX:INT_MAX);
+    if (!dy) is->islp = (dx<0?-MAXINT:MAXINT);
     else is->islp = FixedDiv(dx, dy);
-    if (!dx) is->slp = (dy<0?-INT_MAX:INT_MAX);
+    if (!dx) is->slp = (dy<0?-MAXINT:MAXINT);
     else is->slp = FixedDiv(dy, dx);
 
 }
@@ -393,8 +393,8 @@ void AM_findMinMaxBoundaries(void)
     fixed_t a;
     fixed_t b;
 
-    min_x = min_y =  INT_MAX;
-    max_x = max_y = -INT_MAX;
+    min_x = min_y =  MAXINT;
+    max_x = max_y = -MAXINT;
   
     for (i=0;i<numvertexes;i++)
     {
@@ -432,7 +432,7 @@ void AM_changeWindowLoc(void)
     if (m_paninc.x || m_paninc.y)
     {
 	followplayer = 0;
-	f_oldloc.x = INT_MAX;
+	f_oldloc.x = MAXINT;
     }
 
     m_x += m_paninc.x;
@@ -464,7 +464,7 @@ void AM_initVariables(void)
     automapactive = true;
     fb = screens[0];
 
-    f_oldloc.x = INT_MAX;
+    f_oldloc.x = MAXINT;
     amclock = 0;
     lightlev = 0;
 
@@ -679,7 +679,7 @@ AM_Responder
 	    break;
 	  case AM_FOLLOWKEY:
 	    followplayer = !followplayer;
-	    f_oldloc.x = INT_MAX;
+	    f_oldloc.x = MAXINT;
 	    plr->message = followplayer ? AMSTR_FOLLOWON : AMSTR_FOLLOWOFF;
 	    break;
 	  case AM_GRIDKEY:

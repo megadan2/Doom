@@ -541,7 +541,7 @@ P_BlockThingsIterator
 //
 // INTERCEPT ROUTINES
 //
-intercept_t	intercepts[INT_MAXERCEPTS];
+intercept_t	intercepts[MAXINTERCEPTS];
 intercept_t*	intercept_p;
 
 divline_t 	trace;
@@ -695,7 +695,7 @@ P_TraverseIntercepts
 	
     while (count--)
     {
-	dist = INT_MAX;
+	dist = MAXINT;
 	for (scan = intercepts ; scan<intercept_p ; scan++)
 	{
 	    if (scan->frac < dist)
@@ -723,7 +723,7 @@ P_TraverseIntercepts
         if ( !func (in) )
 	    return false;	// don't bother going farther
 
-	in->frac = INT_MAX;
+	in->frac = MAXINT;
     }
 	
     return true;		// everything was traversed
@@ -769,7 +769,7 @@ P_PathTraverse
 
     int		count;
 		
-    earlyout = flags & PT_EARLYOUT;
+    earlyout = (flags & PT_EARLYOUT) ? true : false;
 		
     validcount++;
     intercept_p = intercepts;

@@ -117,11 +117,10 @@ int Window::TranslateKey( WPARAM wParam ) {
         case VK_BACK:
         case VK_DELETE:     rc = KEY_BACKSPACE;     break;
         case VK_PAUSE:      rc = KEY_PAUSE;         break;
-        //case XK_KP_Equal:
-        //case XK_equal:	rc = KEY_EQUALS;	break;
-        //
-        //case XK_KP_Subtract:
-        //case XK_minus:	rc = KEY_MINUS;		break;
+        case VK_ADD:
+        case VK_OEM_PLUS:   rc = KEY_EQUALS;        break;
+        case VK_SUBTRACT:
+        case VK_OEM_MINUS:  rc = KEY_MINUS;         break;
         case VK_SHIFT:
         case VK_LSHIFT:
         case VK_RSHIFT:     rc = KEY_RSHIFT;        break;
@@ -138,8 +137,9 @@ int Window::TranslateKey( WPARAM wParam ) {
         default:
             //if (rc >= XK_space && rc <= XK_asciitilde)
             //    rc = rc - XK_space + ' ';
-            if (rc >= 'A' && rc <= 'Z')
+            if (rc >= 'A' && rc <= 'Z') {
                 rc = rc - 'A' + 'a';
+            }
             break;
     }
     return rc;
