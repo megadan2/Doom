@@ -137,22 +137,10 @@ void Screen::Draw( uint8_t* buf ) {
 
 //=============================================================================
 void Screen::SetPalette( uint8_t* palette, int gammaTable ) {
-    uint8_t c;
     for ( int i = 0; i < 256; i++ ) {
-        // Red
-        c = GamaTable[gammaTable][*palette++];
-        c = uint8_t(float(( c << 8) + c) / USHRT_MAX * 255.0f);
-        m_palette[i] = c << 16;
-
-        // Green
-        c = GamaTable[gammaTable][*palette++];
-        c = uint8_t(float((c << 8) + c) / USHRT_MAX * 255.0f);
-        m_palette[i] += c << 8;
-
-        // Blue
-        c = GamaTable[gammaTable][*palette++];
-        c = uint8_t(float((c << 8) + c) / USHRT_MAX * 255.0f);
-        m_palette[i] += c;
+        m_palette[i]  = GamaTable[gammaTable][*palette++] << 16; // Red
+        m_palette[i] += GamaTable[gammaTable][*palette++] << 8;  // Green
+        m_palette[i] += GamaTable[gammaTable][*palette++];       // Blue
     }
 }
 
