@@ -5,10 +5,8 @@ This is a work in progress complete rewrite of the open source linuxdoom for Win
 Just for fun.
 
 ##### Progress
-* .c files renamed to .cpp
-* Created Visual Studio 2015 project
 * Removed Linux code
-* Fixed all compile errors/warnings from building with C++
+* Fixed all compile errors/warnings when building with C++ and Visual Studio 2015
 * Added rendering support for Windows using Bitmap and StretchBlt
 * Added keyboard support for Windows
 * Currently rewriting initialization code
