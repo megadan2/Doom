@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 #include <functional>
-#include "original/d_event.h"
+#include "../original/d_event.h"
 
 namespace Doom {
 

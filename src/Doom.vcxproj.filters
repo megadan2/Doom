@@ -1,15 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="window.cpp" />
-    <ClCompile Include="screen.cpp" />
     <ClCompile Include="original\hu_lib.cpp">
       <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\hu_stuff.cpp">
-      <Filter>Original Source</Filter>
-    </ClCompile>
-    <ClCompile Include="original\i_main.cpp">
       <Filter>Original Source</Filter>
     </ClCompile>
     <ClCompile Include="original\i_net.cpp">
@@ -189,10 +184,27 @@
     <ClCompile Include="original\g_game.cpp">
       <Filter>Original Source</Filter>
     </ClCompile>
+    <ClCompile Include="windows\Screen.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="windows\Window.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="windows\Main.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Doom.cpp" />
+    <ClCompile Include="CmdArgs.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFile.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FileUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="screen.h" />
-    <ClInclude Include="window.h" />
     <ClInclude Include="original\hu_lib.h">
       <Filter>Original Source</Filter>
     </ClInclude>
@@ -382,10 +394,36 @@
     <ClInclude Include="original\g_game.h">
       <Filter>Original Source</Filter>
     </ClInclude>
+    <ClInclude Include="windows\Screen.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="windows\Window.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Doom.h" />
+    <ClInclude Include="CmdArgs.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFile.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DoomDef.h" />
+    <ClInclude Include="FileUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Original Source">
       <UniqueIdentifier>{51a0a50d-955f-42b8-bff1-825f04f85959}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{89ba6d00-e067-4a0f-b95e-bca80d1137a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{164b3c21-f1a1-4089-a343-c894922ddd2e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

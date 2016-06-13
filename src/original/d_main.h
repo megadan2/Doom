@@ -46,7 +46,8 @@ void D_AddFile (char *file);
 // calls all startup code, parses command line options.
 // If not overrided by user input, calls N_AdvanceDemo.
 //
-void D_DoomMain (void);
+namespace Doom { class Doom; }
+void D_DoomMain ( Doom::Doom* doom );
 
 // Called by IO functions when input is detected.
 void D_PostEvent (event_t* ev);

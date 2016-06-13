@@ -40,8 +40,8 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 int XShmGetEventBase( Display* dpy ); // problems with g++?
 #endif
 
-#include "../window.h"
-#include "../screen.h"
+#include "../windows/window.h"
+#include "../windows/screen.h"
 #include <memory>
 using std::unique_ptr;
 using std::make_unique;
