@@ -9,5 +9,5 @@ Just for fun.
 * Created Visual Studio 2015 project
 * Removed Linux code
 * Fixed all compile errors/warnings from building with C++
-* Added rendering support for Windows using offscreen Bitmap and StretchBlt
+* Added rendering support for Windows using Bitmap and StretchBlt
 * Currently rewriting initialization code
