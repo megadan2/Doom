@@ -414,6 +414,7 @@
     <ClInclude Include="FileUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="DoomConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Original Source">

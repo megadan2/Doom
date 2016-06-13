@@ -230,6 +230,7 @@
   <ItemGroup>
     <ClInclude Include="CmdArgs.h" />
     <ClInclude Include="Doom.h" />
+    <ClInclude Include="DoomConfig.h" />
     <ClInclude Include="DoomDef.h" />
     <ClInclude Include="FileUtil.h" />
     <ClInclude Include="StringUtil.h" />

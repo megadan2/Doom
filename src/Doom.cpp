@@ -14,10 +14,7 @@ namespace Doom {
 
 //=============================================================================
 Doom::Doom( int argc, char** argv ) :
-    m_cmdArgs( argc, argv ),
-    m_gameMode( GameMode::Indetermined ),
-    m_language( Language::English ),
-    m_devParm( false )
+    m_cmdArgs( argc, argv )
 {
     //TODO remove
     myargc = argc;
@@ -26,7 +23,16 @@ Doom::Doom( int argc, char** argv ) :
 
 //=============================================================================
 void Doom::Run() {
+    setbuf( stdout, nullptr );
     IdentifyVersion();
+    PrintVersion();
+
+    m_config.noMonsters     = m_cmdArgs.HasArg( "nomonsters" );
+    m_config.respawnParm    = m_cmdArgs.HasArg( "-respawn" );
+    m_config.fastParm       = m_cmdArgs.HasArg( "-fast" );
+    m_config.devParm        = m_cmdArgs.HasArg( "-devparm" );
+    m_config.deathmatch     = m_cmdArgs.HasArg( "-altdeath" ) ? 2 : m_cmdArgs.HasArg( "-deathmatch" ) ? 1 : 0;
+
     D_DoomMain( this ); //TODO remove
 }
 
@@ -44,35 +50,35 @@ void Doom::IdentifyVersion() {
     if ( !home ) {
         I_Error( "Please set $HOME to your home directory" );
     }
-    m_baseDefault = StringUtil::Format( "%s/.doomrc", home );
+    m_config.baseDefault = StringUtil::Format( "%s/.doomrc", home );
 
     // Handle devmode parameters
     if ( m_cmdArgs.HasArg( "-shdev" ) ) {
-        m_gameMode = GameMode::Shareware;
-        m_devParm = true;
+        m_config.gameMode = GameMode::Shareware;
+        m_config.devParm = true;
         AddWad( DEVDATA"doom1.wad" );
         AddWad( DEVMAPS"data_se/texture1.lmp" );
         AddWad( DEVMAPS"data_se/pnames.lmp" );
-        m_baseDefault = DEVDATA"default.cfg";
+        m_config.baseDefault = DEVDATA"default.cfg";
         return;
     }
     if ( m_cmdArgs.HasArg( "-regdev" ) ) {
-        m_gameMode = GameMode::Registered;
-        m_devParm = true;
+        m_config.gameMode = GameMode::Registered;
+        m_config.devParm = true;
         AddWad( DEVDATA"doom.wad" );
         AddWad( DEVMAPS"data_se/texture1.lmp" );
         AddWad( DEVMAPS"data_se/texture2.lmp" );
         AddWad( DEVMAPS"data_se/pnames.lmp" );
-        m_baseDefault = DEVDATA"default.cfg";
+        m_config.baseDefault = DEVDATA"default.cfg";
         return;
     }
     if ( m_cmdArgs.HasArg( "-comdev" ) ) {
-        m_gameMode = GameMode::Commercial;
-        m_devParm = true;
+        m_config.gameMode = GameMode::Commercial;
+        m_config.devParm = true;
         AddWad( DEVDATA"doom2.wad" );
         AddWad( DEVMAPS"cdata/texture1.lmp" );
         AddWad( DEVMAPS"cdata/pnames.lmp" );
-        m_baseDefault = DEVDATA"default.cfg";
+        m_config.baseDefault = DEVDATA"default.cfg";
         return;
     }
 
@@ -97,7 +103,67 @@ void Doom::IdentifyVersion() {
     if ( CheckWad( doomWadDir, "doom1.wad", GameMode::Shareware ) )     { return; } // Shareware
 
     printf( "Game mode indeterminate.\n" );
-    m_gameMode = GameMode::Indetermined;
+    m_config.gameMode = GameMode::Indetermined;
+}
+
+//=============================================================================
+void Doom::PrintVersion() {
+    string title;
+    switch ( m_config.gameMode ) {
+    case GameMode::Retail:
+        title = StringUtil::Format(
+                 "                         "
+                 "The Ultimate DOOM Startup v%i.%i"
+                 "                           ",
+                 VERSION / 100, VERSION % 100 );
+        break;
+    case GameMode::Shareware:
+        title = StringUtil::Format(
+                 "                            "
+                 "DOOM Shareware Startup v%i.%i"
+                 "                           ",
+                 VERSION / 100, VERSION % 100 );
+        break;
+    case GameMode::Registered:
+        title = StringUtil::Format(
+                 "                            "
+                 "DOOM Registered Startup v%i.%i"
+                 "                           ",
+                 VERSION / 100, VERSION % 100 );
+        break;
+    case GameMode::Commercial:
+        title = StringUtil::Format(
+                 "                         "
+                 "DOOM 2: Hell on Earth v%i.%i"
+                 "                           ",
+                 VERSION / 100, VERSION % 100 );
+        break;
+        /*FIXME
+        case pack_plut:
+        sprintf (title,
+        "                   "
+        "DOOM 2: Plutonia Experiment v%i.%i"
+        "                           ",
+        VERSION/100,VERSION%100);
+        break;
+        case pack_tnt:
+        sprintf (title,
+        "                     "
+        "DOOM 2: TNT - Evilution v%i.%i"
+        "                           ",
+        VERSION/100,VERSION%100);
+        break;
+        */
+    default:
+        title = StringUtil::Format(
+                 "                     "
+                 "Public DOOM - v%i.%i"
+                 "                           ",
+                 VERSION / 100, VERSION % 100 );
+        break;
+    }
+
+    printf( "%s\n", title.c_str() );
 }
 
 //=============================================================================
@@ -109,7 +175,7 @@ void Doom::AddWad( const string& wad ) {
 bool Doom::CheckWad( const char* wadDir, const char* wad, GameMode gameMode, Language language ) {
     string wadFile = StringUtil::Format( "%s/%s", wadDir, wad );
     if ( FileUtil::HasReadAccess( wadFile ) ) {
-        m_gameMode = gameMode;
+        m_config.gameMode = gameMode;
         AddWad( wadFile );
         return true;
     }

@@ -570,83 +570,21 @@ void D_DoomMain ( Doom::Doom* doom )
     char                    file[256];
 	
     //=====================================================
-    gamemode = (GameMode_t)doom->GetGameMode();
-    language = (Language_t)doom->GetLanguage();
-    devparm = doom->IsDevMode();
-    strcpy( basedefault, doom->GetBaseDefault().c_str() );
+    Doom::DoomConfig* config = doom->GetConfig();
+    gamemode = (GameMode_t)config->gameMode;
+    language = (Language_t)config->language;
+    devparm = config->devParm;
+    modifiedgame = config->modifiedGame;
+    nomonsters = config->noMonsters;
+    respawnparm = config->respawnParm;
+    fastparm = config->fastParm;
+    devparm = config->devParm;
+    deathmatch = config->deathmatch;
+    strcpy( basedefault, config->baseDefault.c_str() );
     for ( string& wad : doom->GetWadFiles() ) {
         D_AddFile( (char*)wad.c_str() );
     }
     //=====================================================
-	
-    setbuf (stdout, NULL);
-    modifiedgame = false;
-	
-    nomonsters = M_CheckParm ("-nomonsters") ? true : false;
-    respawnparm = M_CheckParm ("-respawn") ? true : false;
-    fastparm = M_CheckParm ("-fast") ? true : false;
-    devparm = M_CheckParm ("-devparm") ? true : false;
-    if (M_CheckParm ("-altdeath"))
-	deathmatch = 2;
-    else if (M_CheckParm ("-deathmatch"))
-	deathmatch = 1;
-
-    switch ( gamemode )
-    {
-      case retail:
-	sprintf (title,
-		 "                         "
-		 "The Ultimate DOOM Startup v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-      case shareware:
-	sprintf (title,
-		 "                            "
-		 "DOOM Shareware Startup v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-      case registered:
-	sprintf (title,
-		 "                            "
-		 "DOOM Registered Startup v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-      case commercial:
-	sprintf (title,
-		 "                         "
-		 "DOOM 2: Hell on Earth v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-/*FIXME
-       case pack_plut:
-	sprintf (title,
-		 "                   "
-		 "DOOM 2: Plutonia Experiment v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-      case pack_tnt:
-	sprintf (title,
-		 "                     "
-		 "DOOM 2: TNT - Evilution v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-*/
-      default:
-	sprintf (title,
-		 "                     "
-		 "Public DOOM - v%i.%i"
-		 "                           ",
-		 VERSION/100,VERSION%100);
-	break;
-    }
-    
-    printf ("%s\n",title);
 
     if (devparm)
 	printf(D_DEVSTR);
