@@ -10,4 +10,5 @@ Just for fun.
 * Removed Linux code
 * Fixed all compile errors/warnings from building with C++
 * Added rendering support for Windows using Bitmap and StretchBlt
+* Added keyboard support for Windows
 * Currently rewriting initialization code
