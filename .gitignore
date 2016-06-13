@@ -2,4 +2,5 @@ Doom.VC.db
 Doom.VC.VC.opendb
 out/
 bin/
+ipch/
 *.user
