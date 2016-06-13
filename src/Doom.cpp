@@ -176,6 +176,7 @@ bool Doom::CheckWad( const char* wadDir, const char* wad, GameMode gameMode, Lan
     string wadFile = StringUtil::Format( "%s/%s", wadDir, wad );
     if ( FileUtil::HasReadAccess( wadFile ) ) {
         m_config.gameMode = gameMode;
+        m_config.language = language;
         AddWad( wadFile );
         return true;
     }
