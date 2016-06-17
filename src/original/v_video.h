@@ -52,10 +52,6 @@ extern	int	usegamma;
 
 
 
-// Allocates buffer screens, call before R_Init.
-void V_Init (void);
-
-
 void
 V_CopyRect
 ( int		srcx,

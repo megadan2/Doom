@@ -2,6 +2,7 @@
 
 #include "CmdArgs.h"
 #include "DoomConfig.h"
+#include "Video.h"
 
 namespace Doom {
 
@@ -13,10 +14,12 @@ public:
 
     vector<string>& GetWadFiles();
     DoomConfig*     GetConfig();
+    Video*          GetVideo();
 
 private:
     void            IdentifyVersion();
     void            PrintVersion();
+    void            HandleArgs();
     void            AddWad( const string& wad );
     bool            CheckWad( const char* wadDir, const char* wad, GameMode gameMode, Language language = Language::English );
 
@@ -24,6 +27,7 @@ private:
     CmdArgs         m_cmdArgs;
     vector<string>  m_wadFiles;
     DoomConfig      m_config;
+    Video           m_video;
 };
 
 //=============================================================================
@@ -34,6 +38,11 @@ inline vector<string>& Doom::GetWadFiles() {
 //=============================================================================
 inline DoomConfig* Doom::GetConfig() {
     return &m_config;
+}
+
+//=============================================================================
+inline Video* Doom::GetVideo() {
+    return &m_video;
 }
 
 }

@@ -570,9 +570,16 @@ void D_DoomMain ( Doom::Doom* doom )
     char                    file[256];
 	
     //=====================================================
+    extern int forwardmove[2];
+    extern int sidemove[2];
+
     Doom::DoomConfig* config = doom->GetConfig();
     gamemode = (GameMode_t)config->gameMode;
     language = (Language_t)config->language;
+    startskill = (skill_t)config->startSkill;
+    startepisode = config->startEpisode;
+    startmap = config->startMap;
+    autostart = config->autoStart;
     devparm = config->devParm;
     modifiedgame = config->modifiedGame;
     nomonsters = config->noMonsters;
@@ -580,151 +587,21 @@ void D_DoomMain ( Doom::Doom* doom )
     fastparm = config->fastParm;
     devparm = config->devParm;
     deathmatch = config->deathmatch;
+    forwardmove[0] = forwardmove[0] * config->turboScale / 100;
+    forwardmove[1] = forwardmove[1] * config->turboScale / 100;
+    sidemove[0] = sidemove[0] * config->turboScale / 100;
+    sidemove[1] = sidemove[1] * config->turboScale / 100;
+    startepisode = config->startEpisode;
+    startmap = config->startMap;
+    autostart = config->autoStart;
     strcpy( basedefault, config->baseDefault.c_str() );
     for ( string& wad : doom->GetWadFiles() ) {
         D_AddFile( (char*)wad.c_str() );
     }
-    //=====================================================
-
-    if (devparm)
-	printf(D_DEVSTR);
-    
-    if (M_CheckParm("-cdrom"))
-    {
-	printf(D_CDROM);
-	_mkdir("c:\\doomdata");
-	strcpy (basedefault,"c:/doomdata/default.cfg");
-    }	
-    
-    // turbo option
-    if ( (p=M_CheckParm ("-turbo")) )
-    {
-	int     scale = 200;
-	extern int forwardmove[2];
-	extern int sidemove[2];
-	
-	if (p<myargc-1)
-	    scale = atoi (myargv[p+1]);
-	if (scale < 10)
-	    scale = 10;
-	if (scale > 400)
-	    scale = 400;
-	printf ("turbo scale: %i%%\n",scale);
-	forwardmove[0] = forwardmove[0]*scale/100;
-	forwardmove[1] = forwardmove[1]*scale/100;
-	sidemove[0] = sidemove[0]*scale/100;
-	sidemove[1] = sidemove[1]*scale/100;
+    for ( int i = 0; i < 4; i++ ) {
+        screens[i] = doom->GetVideo()->GetScreen( 0 ) + i*SCREENWIDTH*SCREENHEIGHT;
     }
-    
-    // add any files specified on the command line with -file wadfile
-    // to the wad list
-    //
-    // convenience hack to allow -wart e m to add a wad file
-    // prepend a tilde to the filename so wadfile will be reloadable
-    p = M_CheckParm ("-wart");
-    if (p)
-    {
-	myargv[p][4] = 'p';     // big hack, change to -warp
-
-	// Map name handling.
-	switch (gamemode )
-	{
-	  case shareware:
-	  case retail:
-	  case registered:
-	    sprintf (file,"~%sE%cM%c.wad",
-                  DEVMAPS, myargv[p+1][0], myargv[p+2][0]);
-	    printf("Warping to Episode %s, Map %s.\n",
-		   myargv[p+1],myargv[p+2]);
-	    break;
-	    
-	  case commercial:
-	  default:
-	    p = atoi (myargv[p+1]);
-	    if (p<10)
-	      sprintf (file,"~%scdata/map0%i.wad", DEVMAPS, p);
-	    else
-	      sprintf (file,"~%scdata/map%i.wad", DEVMAPS, p);
-	    break;
-	}
-	D_AddFile (file);
-    }
-	
-    p = M_CheckParm ("-file");
-    if (p)
-    {
-	// the parms after p are wadfile/lump names,
-	// until end of parms or another - preceded parm
-	modifiedgame = true;            // homebrew levels
-	while (++p != myargc && myargv[p][0] != '-')
-	    D_AddFile (myargv[p]);
-    }
-
-    p = M_CheckParm ("-playdemo");
-
-    if (!p)
-	p = M_CheckParm ("-timedemo");
-
-    if (p && p < myargc-1)
-    {
-	sprintf (file,"%s.lmp", myargv[p+1]);
-	D_AddFile (file);
-	printf("Playing demo %s.lmp.\n",myargv[p+1]);
-    }
-    
-    // get skill / episode / map from parms
-    startskill = sk_medium;
-    startepisode = 1;
-    startmap = 1;
-    autostart = false;
-
-		
-    p = M_CheckParm ("-skill");
-    if (p && p < myargc-1)
-    {
-	startskill = (skill_t)(myargv[p+1][0]-'1');
-	autostart = true;
-    }
-
-    p = M_CheckParm ("-episode");
-    if (p && p < myargc-1)
-    {
-	startepisode = myargv[p+1][0]-'0';
-	startmap = 1;
-	autostart = true;
-    }
-	
-    p = M_CheckParm ("-timer");
-    if (p && p < myargc-1 && deathmatch)
-    {
-	int     time;
-	time = atoi(myargv[p+1]);
-	printf("Levels will end after %d minute",time);
-	if (time>1)
-	    printf("s");
-	printf(".\n");
-    }
-
-    p = M_CheckParm ("-avg");
-    if (p && p < myargc-1 && deathmatch)
-	printf("Austin Virtual Gaming: Levels will end after 20 minutes\n");
-
-    p = M_CheckParm ("-warp");
-    if (p && p < myargc-1)
-    {
-	if (gamemode == commercial)
-	    startmap = atoi (myargv[p+1]);
-	else
-	{
-	    startepisode = myargv[p+1][0]-'0';
-	    startmap = myargv[p+2][0]-'0';
-	}
-	autostart = true;
-    }
-    
-    // init subsystems
-    printf ("V_Init: allocate screens.\n");
-    V_Init ();
+    //=====================================================    
 
     printf ("M_LoadDefaults: Load system defaults.\n");
     M_LoadDefaults ();              // load before initing other systems

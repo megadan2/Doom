@@ -223,6 +223,7 @@
     <ClCompile Include="original\w_wad.cpp" />
     <ClCompile Include="original\z_zone.cpp" />
     <ClCompile Include="TextFile.cpp" />
+    <ClCompile Include="Video.cpp" />
     <ClCompile Include="windows\Main.cpp" />
     <ClCompile Include="windows\Screen.cpp" />
     <ClCompile Include="windows\Window.cpp" />
@@ -233,6 +234,10 @@
     <ClInclude Include="DoomConfig.h" />
     <ClInclude Include="DoomDef.h" />
     <ClInclude Include="FileUtil.h" />
+    <ClInclude Include="languages\English.h" />
+    <ClInclude Include="languages\French.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="TextFile.h" />
     <ClInclude Include="original\am_map.h" />
@@ -298,6 +303,7 @@
     <ClInclude Include="original\wi_stuff.h" />
     <ClInclude Include="original\w_wad.h" />
     <ClInclude Include="original\z_zone.h" />
+    <ClInclude Include="Video.h" />
     <ClInclude Include="windows\Screen.h" />
     <ClInclude Include="windows\Window.h" />
   </ItemGroup>

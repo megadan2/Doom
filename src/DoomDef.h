@@ -4,6 +4,17 @@ namespace Doom {
 
 #define VERSION 110
 
+// All important printed strings.
+// Language selection (message strings).
+// Use -DFRENCH etc.
+
+#ifdef FRENCH
+#include "languages/French.h"
+#else
+#include "languages/English.h"
+#endif
+
+
 //=============================================================================
 // Game mode handling - identify IWAD version to handle IWAD dependend 
 // animations etc.
@@ -26,5 +37,18 @@ enum class Language {
     German,
     Unknown
 };
+
+//=============================================================================
+enum class Skill {
+    Baby,
+    Easy,
+    Medium,
+    Hard,
+    Nightmare
+};
+
+// File locations, relative to current position. Path names are OS-sensitive.
+#define DEVMAPS "devmaps"
+#define DEVDATA "devdata"
 
 }

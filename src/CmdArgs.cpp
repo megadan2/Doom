@@ -61,12 +61,41 @@ const char* CmdArgs::GetArg( const char* name ) const {
 }
 
 //=============================================================================
+const char* CmdArgs::GetArg( int index ) const {
+    if ( index > 0 && (size_t)index < m_args.size() ) {
+        return m_args[index].c_str();
+    }
+    return nullptr;
+}
+
+//=============================================================================
 int CmdArgs::GetArgAsInt( const char* name, int default ) const {
     int index = GetArgIndex( name );
     if ( index > 0 ) {
         return atoi( m_args[index].c_str() );
     }
     return default;
+}
+
+//=============================================================================
+int CmdArgs::GetArgAsInt( int index, int default ) const {
+    const char* arg = GetArg( index );
+    if ( arg ) {
+        return atoi( arg );
+    }
+    return default;
+}
+
+//=============================================================================
+vector<string> CmdArgs::GetArgParams( const char* name ) const {
+    vector<string> params;
+    int arg = GetArgIndex( name );
+    if ( arg ) {
+        while ( (size_t)arg < m_args.size() && m_args[arg].at(0) != '-' ) {
+            arg++;
+        }
+    }
+    return params;
 }
 
 //=============================================================================

@@ -1,10 +1,12 @@
 #include "Doom.h"
 #include "StringUtil.h"
 #include "FileUtil.h"
+#include "Math.h"
 #include "original/m_argv.h"
 #include "original/d_main.h"
 #include "original/i_system.h"
 #include <io.h>
+#include <direct.h>
 
 // File locations, relative to current position. Path names are OS-sensitive.
 #define DEVMAPS "devmaps"
@@ -26,12 +28,11 @@ void Doom::Run() {
     setbuf( stdout, nullptr );
     IdentifyVersion();
     PrintVersion();
+    HandleArgs();
 
-    m_config.noMonsters     = m_cmdArgs.HasArg( "nomonsters" );
-    m_config.respawnParm    = m_cmdArgs.HasArg( "-respawn" );
-    m_config.fastParm       = m_cmdArgs.HasArg( "-fast" );
-    m_config.devParm        = m_cmdArgs.HasArg( "-devparm" );
-    m_config.deathmatch     = m_cmdArgs.HasArg( "-altdeath" ) ? 2 : m_cmdArgs.HasArg( "-deathmatch" ) ? 1 : 0;
+    // init subsystems
+    printf( "V_Init: allocate screens.\n" );
+    m_video.Init();
 
     D_DoomMain( this ); //TODO remove
 }
@@ -164,6 +165,125 @@ void Doom::PrintVersion() {
     }
 
     printf( "%s\n", title.c_str() );
+}
+
+//=============================================================================
+void Doom::HandleArgs() {
+    m_config.noMonsters     = m_cmdArgs.HasArg( "-nomonsters" );
+    m_config.respawnParm    = m_cmdArgs.HasArg( "-respawn" );
+    m_config.fastParm       = m_cmdArgs.HasArg( "-fast" );
+    m_config.devParm        = m_cmdArgs.HasArg( "-devparm" );
+    m_config.deathmatch     = m_cmdArgs.HasArg( "-altdeath" ) ? 2 : m_cmdArgs.HasArg( "-deathmatch" ) ? 1 : 0;
+
+    if ( m_config.devParm ) {
+        printf( D_DEVSTR );
+    }
+
+    if ( m_cmdArgs.HasArg( "-cdrom" ) ) {
+        printf( D_CDROM );
+        _mkdir( "c:\\doomdata" );
+        m_config.baseDefault = "c:/doomdata/default.cfg";
+    }
+
+    if ( m_cmdArgs.HasArg( "-turbo" ) ) {
+        m_config.turboScale = Mathi::Clamp( m_cmdArgs.GetArgAsInt( "-turbo", 200 ), 10, 400 );
+        printf( "turbo scale: %i%%\n", m_config.turboScale );
+    }
+
+    // add any files specified on the command line with -file wadfile
+    // to the wad list
+    //
+    // convenience hack to allow -wart e m to add a wad file
+    // prepend a tilde to the filename so wadfile will be reloadable
+    bool warp = false;
+    int warpEpisode = 0;
+    int warpMission = 0;
+    int wart = m_cmdArgs.GetArgIndex( "-wart" );
+    if ( wart ) {
+        warp = true;
+        string file;
+        switch ( m_config.gameMode ) {
+            case GameMode::Shareware:
+            case GameMode::Retail:
+            case GameMode::Registered: {
+                warpEpisode = m_cmdArgs.GetArgAsInt( wart + 1 );
+                warpMission = m_cmdArgs.GetArgAsInt( wart + 2 );
+                file = StringUtil::Format( "~%sE%iM%i.wad", DEVMAPS, warpEpisode, warpMission );
+                printf( "Warping to Episode %i, Map %i.\n", warpEpisode, warpMission );
+                break;
+            }
+
+            case GameMode::Commercial:
+            default: {
+                warpMission = m_cmdArgs.GetArgAsInt( wart + 1 );
+                if ( warpMission < 10 ) {
+                    file = StringUtil::Format( "~%scdata/map0%i.wad", DEVMAPS, warpMission );
+                } else {
+                    file = StringUtil::Format( "~%scdata/map%i.wad", DEVMAPS, warpMission );
+                }
+                break;
+            }
+        }
+        AddWad( file );
+    }
+
+    if ( m_cmdArgs.HasArg( "-file" ) ) {
+        // the parms after -file are wadfile/lump names, until end of parms or another - preceded parm
+        m_config.modifiedGame = true;   // homebrew levels
+        for ( string& file : m_cmdArgs.GetArgParams( "-file" ) ) {
+            AddWad( file );
+        }
+    }
+
+    int index = m_cmdArgs.GetArgIndex( "-playdemo" );
+    if ( !index ) {
+        index = m_cmdArgs.GetArgIndex( "-timedemo" );
+    }
+    if ( index && index < m_cmdArgs.Size() - 1 ) {
+        string file = StringUtil::Format( "%s.lmp", m_cmdArgs.GetArg( index + 1 ) );
+        AddWad( file );
+        printf( "Playing demo %s.lmp.\n", file.c_str() );
+    }
+
+    // get skill / episode / map from parms		
+    index = m_cmdArgs.GetArgIndex( "-skill" );
+    if ( index && index < m_cmdArgs.Size() - 1 ) {
+        m_config.startSkill = (Skill)( m_cmdArgs.GetArgAsInt( index + 1 ) - 1 );
+        m_config.autoStart = true;
+    }
+
+    index = m_cmdArgs.GetArgIndex( "-episode" );
+    if ( index && index < m_cmdArgs.Size() - 1 ) {
+        m_config.startEpisode = m_cmdArgs.GetArgAsInt( index + 1 );
+        m_config.startMap = 1;
+        m_config.autoStart = true;
+    }
+
+    index = m_cmdArgs.GetArgIndex( "-timer" );
+    if ( index && index < m_cmdArgs.Size() - 1 && m_config.deathmatch ) {
+        int time = m_cmdArgs.GetArgAsInt( index + 1 );
+        printf( "Levels will end after %d minute", time );
+        if ( time > 1 ) {
+            printf( "s" );
+        }
+        printf( ".\n" );
+    }
+
+    index = m_cmdArgs.GetArgIndex( "-avg" );
+    if ( index && index < m_cmdArgs.Size() - 1 && m_config.deathmatch ) {
+        printf( "Austin Virtual Gaming: Levels will end after 20 minutes\n" );
+    }
+
+    index = m_cmdArgs.GetArgIndex( "-warp" );
+    if ( index && index < m_cmdArgs.Size() - 1 ) {
+        if ( m_config.gameMode == GameMode::Commercial ) {
+            m_config.startMap = m_cmdArgs.GetArgAsInt( index + 1 );
+        } else {
+            m_config.startEpisode = m_cmdArgs.GetArgAsInt( index + 1 );
+            m_config.startMap = m_cmdArgs.GetArgAsInt( index + 2 );
+        }
+        m_config.autoStart = true;
+    }
 }
 
 //=============================================================================

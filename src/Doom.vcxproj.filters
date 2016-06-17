@@ -194,15 +194,14 @@
       <Filter>Windows</Filter>
     </ClCompile>
     <ClCompile Include="Doom.cpp" />
-    <ClCompile Include="CmdArgs.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="TextFile.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="FileUtil.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Video.cpp" />
+    <ClCompile Include="CmdArgs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="original\hu_lib.h">
@@ -401,9 +400,6 @@
       <Filter>Windows</Filter>
     </ClInclude>
     <ClInclude Include="Doom.h" />
-    <ClInclude Include="CmdArgs.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="TextFile.h">
       <Filter>Utils</Filter>
     </ClInclude>
@@ -415,6 +411,20 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="DoomConfig.h" />
+    <ClInclude Include="languages\English.h">
+      <Filter>Languages</Filter>
+    </ClInclude>
+    <ClInclude Include="languages\French.h">
+      <Filter>Languages</Filter>
+    </ClInclude>
+    <ClInclude Include="Video.h" />
+    <ClInclude Include="Rect.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdArgs.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Original Source">
@@ -425,6 +435,12 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{164b3c21-f1a1-4089-a343-c894922ddd2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Languages">
+      <UniqueIdentifier>{ece4b156-e073-48eb-bab7-ece91c425832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{4abd1020-42ad-4162-a1a4-c40182579830}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
