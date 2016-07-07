@@ -202,6 +202,13 @@
     </ClCompile>
     <ClCompile Include="Video.cpp" />
     <ClCompile Include="CmdArgs.cpp" />
+    <ClCompile Include="CVarSystem.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoneAllocator.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WadSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="original\hu_lib.h">
@@ -425,6 +432,13 @@
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="CmdArgs.h" />
+    <ClInclude Include="CVarSystem.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoneAllocator.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WadSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Original Source">
@@ -441,6 +455,9 @@
     </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{4abd1020-42ad-4162-a1a4-c40182579830}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{d5987b2a-9ea4-4eab-ae1e-06aa22ea71da}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

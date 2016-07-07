@@ -18,7 +18,7 @@ struct DoomConfig {
     int             startEpisode    = 1;
     int             startMap        = 1;
     bool            autoStart       = false;
-    string          baseDefault;
+    string          defaultFile;
     bool            devParm;                    // DEBUG: launched with -devparm
     bool            modifiedGame;               // Set if homebrew PWAD stuff has been added.
     bool            noMonsters;                 // -nomonsters option

@@ -16,8 +16,11 @@ namespace Doom {
 
 //=============================================================================
 Doom::Doom( int argc, char** argv ) :
-    m_cmdArgs( argc, argv )
+    m_cmdArgs( argc, argv ),
+    m_zAlloc( 6 * 1024 * 1024 )
 {
+    CVar::SetCVarSystem( &m_cvarSystem );
+
     //TODO remove
     myargc = argc;
     myargv = argv;
@@ -33,6 +36,12 @@ void Doom::Run() {
     // init subsystems
     printf( "V_Init: allocate screens.\n" );
     m_video.Init();
+
+    printf( "M_LoadDefaults: Load system defaults.\n" );
+    m_cvarSystem.Load( m_config.defaultFile.c_str() );    // load before initing other systems
+
+    printf( "W_Init: Init WADfiles.\n" );
+    m_wadSystem.InitMultipleFiles( m_wadFiles );
 
     D_DoomMain( this ); //TODO remove
 }
@@ -51,7 +60,7 @@ void Doom::IdentifyVersion() {
     if ( !home ) {
         I_Error( "Please set $HOME to your home directory" );
     }
-    m_config.baseDefault = StringUtil::Format( "%s/.doomrc", home );
+    m_config.defaultFile = StringUtil::Format( "%s/.doomrc", home );
 
     // Handle devmode parameters
     if ( m_cmdArgs.HasArg( "-shdev" ) ) {
@@ -60,7 +69,7 @@ void Doom::IdentifyVersion() {
         AddWad( DEVDATA"doom1.wad" );
         AddWad( DEVMAPS"data_se/texture1.lmp" );
         AddWad( DEVMAPS"data_se/pnames.lmp" );
-        m_config.baseDefault = DEVDATA"default.cfg";
+        m_config.defaultFile = DEVDATA"default.cfg";
         return;
     }
     if ( m_cmdArgs.HasArg( "-regdev" ) ) {
@@ -70,7 +79,7 @@ void Doom::IdentifyVersion() {
         AddWad( DEVMAPS"data_se/texture1.lmp" );
         AddWad( DEVMAPS"data_se/texture2.lmp" );
         AddWad( DEVMAPS"data_se/pnames.lmp" );
-        m_config.baseDefault = DEVDATA"default.cfg";
+        m_config.defaultFile = DEVDATA"default.cfg";
         return;
     }
     if ( m_cmdArgs.HasArg( "-comdev" ) ) {
@@ -79,7 +88,7 @@ void Doom::IdentifyVersion() {
         AddWad( DEVDATA"doom2.wad" );
         AddWad( DEVMAPS"cdata/texture1.lmp" );
         AddWad( DEVMAPS"cdata/pnames.lmp" );
-        m_config.baseDefault = DEVDATA"default.cfg";
+        m_config.defaultFile = DEVDATA"default.cfg";
         return;
     }
 
@@ -182,7 +191,12 @@ void Doom::HandleArgs() {
     if ( m_cmdArgs.HasArg( "-cdrom" ) ) {
         printf( D_CDROM );
         _mkdir( "c:\\doomdata" );
-        m_config.baseDefault = "c:/doomdata/default.cfg";
+        m_config.defaultFile = "c:/doomdata/default.cfg";
+    }
+
+    int config = m_cmdArgs.GetArgIndex( "-config" );
+    if ( config ) {
+        m_config.defaultFile = m_cmdArgs.GetArg( config + 1 );
     }
 
     if ( m_cmdArgs.HasArg( "-turbo" ) ) {

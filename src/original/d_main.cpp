@@ -594,20 +594,19 @@ void D_DoomMain ( Doom::Doom* doom )
     startepisode = config->startEpisode;
     startmap = config->startMap;
     autostart = config->autoStart;
-    strcpy( basedefault, config->baseDefault.c_str() );
+    strcpy( basedefault, config->defaultFile.c_str() );
     for ( string& wad : doom->GetWadFiles() ) {
         D_AddFile( (char*)wad.c_str() );
     }
     for ( int i = 0; i < 4; i++ ) {
         screens[i] = doom->GetVideo()->GetScreen( 0 ) + i*SCREENWIDTH*SCREENHEIGHT;
     }
+    M_LoadDefaults();              // load before initing other systems
+
+    printf( "Z_Init: Init zone memory allocation daemon. \n" );
+    Z_Init();
     //=====================================================    
-
-    printf ("M_LoadDefaults: Load system defaults.\n");
-    M_LoadDefaults ();              // load before initing other systems
-
-    printf ("Z_Init: Init zone memory allocation daemon. \n");
-    Z_Init ();
+    
 
     printf ("W_Init: Init WADfiles.\n");
     W_InitMultipleFiles (wadfiles);

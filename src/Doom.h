@@ -3,6 +3,9 @@
 #include "CmdArgs.h"
 #include "DoomConfig.h"
 #include "Video.h"
+#include "CVarSystem.h"
+#include "ZoneAllocator.h"
+#include "WadSystem.h"
 
 namespace Doom {
 
@@ -28,6 +31,9 @@ private:
     vector<string>  m_wadFiles;
     DoomConfig      m_config;
     Video           m_video;
+    CVarSystem      m_cvarSystem;
+    ZoneAllocator   m_zAlloc;
+    WadSystem       m_wadSystem;
 };
 
 //=============================================================================

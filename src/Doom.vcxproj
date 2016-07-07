@@ -159,6 +159,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CmdArgs.cpp" />
+    <ClCompile Include="CVarSystem.cpp" />
     <ClCompile Include="Doom.cpp" />
     <ClCompile Include="FileUtil.cpp" />
     <ClCompile Include="original\am_map.cpp" />
@@ -224,12 +225,15 @@
     <ClCompile Include="original\z_zone.cpp" />
     <ClCompile Include="TextFile.cpp" />
     <ClCompile Include="Video.cpp" />
+    <ClCompile Include="WadSystem.cpp" />
     <ClCompile Include="windows\Main.cpp" />
     <ClCompile Include="windows\Screen.cpp" />
     <ClCompile Include="windows\Window.cpp" />
+    <ClCompile Include="ZoneAllocator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmdArgs.h" />
+    <ClInclude Include="CVarSystem.h" />
     <ClInclude Include="Doom.h" />
     <ClInclude Include="DoomConfig.h" />
     <ClInclude Include="DoomDef.h" />
@@ -304,8 +308,10 @@
     <ClInclude Include="original\w_wad.h" />
     <ClInclude Include="original\z_zone.h" />
     <ClInclude Include="Video.h" />
+    <ClInclude Include="WadSystem.h" />
     <ClInclude Include="windows\Screen.h" />
     <ClInclude Include="windows\Window.h" />
+    <ClInclude Include="ZoneAllocator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
