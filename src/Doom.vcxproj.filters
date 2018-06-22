@@ -209,6 +209,12 @@
       <Filter>Misc</Filter>
     </ClCompile>
     <ClCompile Include="WadSystem.cpp" />
+    <ClCompile Include="StringUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Swap.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="original\hu_lib.h">
@@ -439,6 +445,9 @@
       <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="WadSystem.h" />
+    <ClInclude Include="Swap.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Original Source">

@@ -25,6 +25,8 @@ private:
     void            HandleArgs();
     void            AddWad( const string& wad );
     bool            CheckWad( const char* wadDir, const char* wad, GameMode gameMode, Language language = Language::English );
+    void            CheckModifiedGame();
+    void            PrintGameMode();
 
 private:
     CmdArgs         m_cmdArgs;

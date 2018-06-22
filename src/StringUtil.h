@@ -7,11 +7,13 @@ using std::unique_ptr;
 
 namespace Doom {
 
+//=============================================================================
 class StringUtil {
 public:
     template<class... Args>
     static string Format( const string& format, Args... args);
 
+    static bool EndsWith( const char* strA, const char* strB );
 };
 
 //=============================================================================

@@ -43,6 +43,9 @@ void Doom::Run() {
     printf( "W_Init: Init WADfiles.\n" );
     m_wadSystem.InitMultipleFiles( m_wadFiles );
 
+    CheckModifiedGame();
+    PrintGameMode();
+
     D_DoomMain( this ); //TODO remove
 }
 
@@ -315,6 +318,76 @@ bool Doom::CheckWad( const char* wadDir, const char* wad, GameMode gameMode, Lan
         return true;
     }
     return false;
+}
+
+//=============================================================================
+// Check for -file in shareware
+//=============================================================================
+void Doom::CheckModifiedGame() {
+    if ( !m_config.modifiedGame ) {
+        return;
+    }
+
+    // These are the lumps that will be checked in IWAD,
+    // if any one is not present, execution will be aborted.
+    char name[23][9] = {
+        "e2m1","e2m2","e2m3","e2m4","e2m5","e2m6","e2m7","e2m8","e2m9",
+        "e3m1","e3m3","e3m3","e3m4","e3m5","e3m6","e3m7","e3m8","e3m9",
+        "dphoof","bfgga0","heada1","cybra1","spida1d1"
+    };
+
+    if ( m_config.gameMode == GameMode::Shareware ) {
+        //TODO I_Error( "\nYou cannot -file with the shareware version. Register!" );
+    }
+
+    if ( m_config.gameMode == GameMode::Registered ) {
+        for ( int i = 0; i < 23; i++ ) {
+            if ( m_wadSystem.CheckNumForName( name[i] ) < 0 ) {
+                //TODO I_Error( "\nThis is not the registered version." );
+            }
+        }
+    }
+
+    // Iff additonal PWAD files are used, print modified banner
+    /*m*/printf(
+        "===========================================================================\n"
+        "ATTENTION:  This version of DOOM has been modified.  If you would like to\n"
+        "get a copy of the original game, call 1-800-IDGAMES or see the readme file.\n"
+        "        You will not receive technical support for modified games.\n"
+        "                      press enter to continue\n"
+        "===========================================================================\n"
+    );
+    getchar();
+}
+
+//=============================================================================
+// Check and print which version is executed.
+//=============================================================================
+void Doom::PrintGameMode() {
+    switch ( m_config.gameMode ) {
+    case GameMode::Shareware:
+    case GameMode::Indetermined:
+        printf(
+            "===========================================================================\n"
+            "                                Shareware!\n"
+            "===========================================================================\n"
+        );
+        break;
+    case GameMode::Registered:
+    case GameMode::Retail:
+    case GameMode::Commercial:
+        printf(
+            "===========================================================================\n"
+            "                 Commercial product - do not distribute!\n"
+            "         Please report software piracy to the SPA: 1-800-388-PIR8\n"
+            "===========================================================================\n"
+        );
+        break;
+
+    default:
+        // Ouch.
+        break;
+    }
 }
 
 }
